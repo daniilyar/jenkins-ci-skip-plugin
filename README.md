@@ -6,10 +6,13 @@
 
 Skip making a build for certain push. Just add `[ci skip]` into your commit's message to let Jenkins know, that you do not want to perform build for the next push.
 
+By default this plugin also skips builds for commits with [maven-release-plugin] anywhere in message.
+
 Full example:
 
 ```
 $ git commit -m 'documentation update [ci skip]'
+$ git commit -m '[maven-release-plugin] prepare for next development iteration'
 ```
 
 It is very useful when you are working things unrelated to application's code such as README. This feature idea comes from [Travis CI](http://about.travis-ci.org/docs/user/how-to-skip-a-build/).
@@ -26,7 +29,7 @@ In the job configuration, check Enable ci-skip.
 
 ### How it works
 
-Jenkins is based on works by changeset, so if there is changeset from before build and commit includes `[ci skip]`, then build is skipped as `NOT_BUILT`.
+Jenkins is based on works by changeset, so if there is changeset from before build and commit includes `[ci skip]`, then build is skipped with 'SUCCESS' status.
 If there is no changeset, it will be build.
 
 ## Development
