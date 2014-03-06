@@ -35,8 +35,15 @@ If there is no changeset, it will be build.
 ## Development
 
 ```
-$ sudo apt-get install ruby-bundler
-$ sudo apt-get install rubygems
+$ sudo apt-get uninstall ruby1.8 ruby
+$ sudo apt-get install ruby1.9.1 ruby1.9.1-dev # this is actually Ruby 1.9.2
+$ sudo ln -s /usr/bin/ruby1.9.1 /usr/bin/ruby
+# Now download RubyGems from https://rubygems.org/pages/download
+$ tar xvzf rubygems-1.x.x.tgz
+$ cd rubygems-1.x.x
+$ sudo ruby setup.rb
+$ sudo ln -s /usr/bin/gem1.9.1 /usr/bin/gem
+$ sudo gem install bundler
 $ bundle install
 $ ./bin/start-jenkins
 $ open http://localhost:8080
