@@ -5,7 +5,7 @@ module CiSkip
     end
 
     def skip?
-      !!(@message =~ /\[ci\s+skip\]|\[skip\s+ci\]/i)
+      !!(@message =~ /\[ci\s+skip\]|\[skip\s+ci\]|\[maven-release-plugin\]/i)
     end
   end
 end
