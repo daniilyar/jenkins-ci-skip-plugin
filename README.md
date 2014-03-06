@@ -32,7 +32,12 @@ In the job configuration, check Enable ci-skip.
 Jenkins is based on works by changeset, so if there is changeset from before build and commit includes `[ci skip]`, then build is skipped with 'SUCCESS' status.
 If there is no changeset, it will be build.
 
-## Development
+## Development:
+
+Install RVM and jruby:
+http://rvm.io/rvm/install
+
+rvm install jruby
 
 ```
 $ sudo apt-get uninstall ruby1.8 ruby
@@ -44,9 +49,16 @@ $ cd rubygems-1.x.x
 $ sudo ruby setup.rb
 $ sudo ln -s /usr/bin/gem1.9.1 /usr/bin/gem
 $ sudo gem install bundler
+$ sudo gem install jpi
 $ bundle install
 $ ./bin/start-jenkins
 $ open http://localhost:8080
+```
+
+To get an hpi file, execute:
+
+```
+$ 
 ```
 
 ### Run Test
