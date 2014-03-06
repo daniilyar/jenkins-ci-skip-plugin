@@ -35,6 +35,8 @@ If there is no changeset, it will be build.
 ## Development
 
 ```
+$ sudo apt-get install ruby-bundler
+$ sudo apt-get install rubygems
 $ bundle install
 $ ./bin/start-jenkins
 $ open http://localhost:8080
