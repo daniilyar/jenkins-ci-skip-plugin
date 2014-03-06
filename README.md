@@ -58,7 +58,7 @@ $ open http://localhost:8080
 To get an hpi file, execute:
 
 ```
-$ 
+$ jpi build
 ```
 
 ### Run Test
