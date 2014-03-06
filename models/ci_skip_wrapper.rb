@@ -35,7 +35,7 @@ class CiSkipWrapper < Jenkins::Tasks::BuildWrapper
 
   private
   def halt(build)
-    build.native.setResult(Java.hudson.model.Result::NOT_BUILT)
+    build.native.setResult(Java.hudson.model.Result::SUCCESS)
     build.halt("Build is skipped by ci-skip.")
   end
 end
